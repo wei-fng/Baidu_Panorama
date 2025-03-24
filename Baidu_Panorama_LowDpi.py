@@ -116,13 +116,14 @@ def wgs2bd09mc(wgs_x, wgs_y):
     return bd09mc_x, bd09mc_y
 
 if __name__ == "__main__":
-    root = r'.\dir'
+    root = "Images_output"
+    dir = "By_Low_Dpi"
+    fn_dir = "Data"
     read_fn = r'converted_data.csv'     # Your File Name
     error_fn = r'error_converted_data.csv'
-    dir = r'images\\Low Dpi'
     filenames_exist = glob.glob1(os.path.join(root, dir), "*.png")
 
-    data = read_csv(os.path.join(root, read_fn))
+    data = read_csv(os.path.join(fn_dir, read_fn))
     header = data[0]
     data = data[1:]
     error_img = []

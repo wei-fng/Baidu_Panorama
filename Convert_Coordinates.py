@@ -6,8 +6,8 @@ root = r'./dir'
 read_fn = "Point_sampled.csv"  # Your File Name
 df = pd.read_csv(os.path.join(root, read_fn))
 
-# EPSG:3857 -> EPSG:4326
-transformer = Transformer.from_crs("EPSG:3857", "EPSG:3857", always_xy=True)
+# EPSG:3857
+transformer = Transformer.from_crs("origin", "EPSG:3857", always_xy=True)        # use WGS84
 
 lon, lat = transformer.transform(df["X"].values, df["Y"].values)
 

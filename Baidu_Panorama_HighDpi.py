@@ -83,8 +83,9 @@ def merge_images_vertically(image1_path, image2_path, final_save_path):
     print(f"Final image merged: {final_save_path}")
 
 if __name__ == "__main__":
-    root = r'./dir'
-    dir = r'images\\High Dpi'
+    root = "Images_output"
+    dir = "By_High_Dpi"
+    fn_dir = "Data"
     read_fn = r'converted_data.csv'     # Your File Name
     
     slices_dir = os.path.join(root, dir, "Slices") 
@@ -97,7 +98,7 @@ if __name__ == "__main__":
 
     filenames_exist = glob.glob1(slices_dir, "*.png")
 
-    data = read_csv(os.path.join(root, read_fn))
+    data = read_csv(os.path.join(fn_dir, read_fn))
     header = data[0]
     data = data[1:]
 
